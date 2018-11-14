@@ -1,0 +1,29 @@
+ name: Install mysql
+  apt: pkg={{ item }} state=latest
+  with_items:
+    - mysql-server
+    - libmysqlclient-dev
+  tags:
+    - mysql-server
+
+- name: Pip install
+  pip:
+    name: Mysql-python
+  tags:
+    - mysql-server
+
+- name: Add user
+  mysql_user:
+    name: bob
+    password: 12345
+    priv: '*.*:ALL'
+    state: present
+  tags:
+      - mysql-server
+
+- name: Create a new database with name 'application'
+  mysql_db:
+    name: application
+    state: present
+  tags:
+    - mysql-server

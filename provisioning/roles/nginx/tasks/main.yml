@@ -1,0 +1,15 @@
+---
+- name: Install nginx 
+  apt:                
+    pkg: nginx        
+    state: latest     
+  tags:
+    - nginx
+
+- name: Create nginx main configuration
+  template:           
+    src=nginx.conf
+    dest=/etc/nginx/nginx.conf
+  notify: restart nginx
+  tags:
+    - nginx
