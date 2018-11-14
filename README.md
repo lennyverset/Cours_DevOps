@@ -5,6 +5,8 @@ Le repository contient le travail effectué en binôme avec Taslim hammoud.
 Le travail a été réalisé avec une machine virtuelle ubuntu. La VM ubuntu contient une vm vagrant ainsi que ansible.
 La vm vagrant sera la machine cible à administrer avec ansible 
 
+Le fichier VagrantFile est créé et contient la configuration de la vm vagrant.
+
 Le fichier provisionning à été créé et contient:
 
 - Un fichier group_vars contenant les variables 
